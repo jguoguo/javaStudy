@@ -1,0 +1,3 @@
+spring对AOP的支持
+
+可以采用Advice中添加一个JoinPoint参数，取得客户端调用的方法名称及参数值
