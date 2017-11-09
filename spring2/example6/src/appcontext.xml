@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+	"http://www.springframework.org/dtd/spring-beans.dtd">
+	
+<beans>
+	<bean id="helloworldbean" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>com.openv.spring.IHelloWorld</value>
+		</property>
+		<property name="target">
+			<ref local="helloworldbeanTarget"/>
+		</property>
+		<property name="interceptorNames">
+			<list>
+				<value>loggingAfterAdvisor</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="helloworldbeanTarget" class="com.openv.spring.HelloWorld"></bean>
+	
+	<bean id="loggingAfterAdvisor" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">
+		<property name="advice">
+			<ref local="loggingAfterAdvice"/>
+		</property>
+		<property name="pattern">
+			<value>.*</value>
+		</property>
+	</bean>
+	
+	<bean id="loggingAfterAdvice" class="com.openv.spring.LoggingAfterAdvice"></bean>
+</beans>
+
+

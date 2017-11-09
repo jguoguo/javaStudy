@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+	"http://www.springframework.org/dtd/spring-beans.dtd">
+	
+<beans>
+	<bean name="fileHelloWorld" class="com.openv.spring.HelloWorld">
+		<constructor-arg>
+			<ref bean="fileHello"/>
+		</constructor-arg>	
+	</bean>
+	
+	<bean name="fileHello" class="com.openv.spring.FileHelloStr">
+		<constructor-arg>
+			<value>HelloWorld.properties</value>
+		</constructor-arg>
+	</bean>
+</beans>
+
+

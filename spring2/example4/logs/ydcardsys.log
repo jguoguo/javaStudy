@@ -1,0 +1,4 @@
+2015-08-13 11:30:37,204 INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [appcontext.xml]
+2015-08-13 11:30:37,396 INFO [com.openv.spring.HelloWorldClient] - "Hello world"
+2015-08-13 11:48:07,773 INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [appcontext.xml]
+2015-08-13 11:48:07,927 INFO [com.openv.spring.HelloWorldClient] - "Hello world"

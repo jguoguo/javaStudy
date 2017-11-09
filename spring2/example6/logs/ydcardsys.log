@@ -1,0 +1,9 @@
+2015-08-13 19:11:46,074 INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [appcontext.xml]
+2015-08-13 19:11:46,385 INFO [com.openv.spring.LoggingBeforeAdvice] - before:The Invocation
+2015-08-13 19:11:46,385 INFO [com.openv.spring.HelloWorld] - helloworld
+2015-08-13 19:11:46,385 INFO [com.openv.spring.HelloClient] - helloworld
+2015-08-13 19:20:34,396 INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [appcontext.xml]
+2015-08-13 19:21:21,198 INFO [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [appcontext.xml]
+2015-08-13 19:21:21,435 INFO [com.openv.spring.HelloWorld] - helloworld
+2015-08-13 19:21:21,435 INFO [com.openv.spring.LoggingAfterAdvice] - after:The Invocation of getContent
+2015-08-13 19:21:21,435 INFO [com.openv.spring.HelloClient] - helloworld
