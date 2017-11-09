@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<form-beans>
+		<form-bean name="stepForm" type="com.bjpowernode.structs.StepActionForm"></form-bean>
+	</form-beans>
+	
+	<action-mappings>
+		<action path="/start"
+				type="com.bjpowernode.structs.StartAction"
+				name="stepForm"
+				scope="session"
+		>
+		<forward name="success" path="/step1.jsp"></forward>
+		</action>
+		
+		<action path="/step1"
+				type="com.bjpowernode.structs.Step1Action"
+				name="stepForm"
+				scope="session"
+		>
+		<forward name="success" path="/step2.jsp"></forward>
+		</action>
+		
+		<action path="/step2"
+				type="com.bjpowernode.structs.Step2Action"
+				name="stepForm"
+				scope="session"
+		>
+		<forward name="success" path="/step3.jsp"></forward>
+		</action>
+		
+		<action path="/step3"
+				type="com.bjpowernode.structs.Step3Action"
+				name="stepForm"
+				scope="session"
+		>
+		<forward name="success" path="/finish.jsp"></forward>
+		</action>
+		
+		
+		<action path="/finish"
+				type="com.bjpowernode.structs.FinishAction"
+				name="stepForm"
+				scope="session"
+		>
+		<forward name="success" path="/success.jsp"></forward>
+		</action>	
+	</action-mappings>
+</struts-config>
+

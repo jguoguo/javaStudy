@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<form-beans>
+		<form-bean name="userForm" type="com.bjpowernode.drp.web.forms.UserActionForm"/>
+	</form-beans>
+	
+	<action-mappings>
+		<action path="/user/user_maint" 
+				type="com.bjpowernode.drp.web.action.UserAction"
+				name="userForm"
+				scope="request"
+				parameter="command"
+		>
+			<forward name="list_success" path="/user/user_list.jsp"/>
+    		<forward name="del_success" path="/user/user_maint.do?command=list" redirect="true"/>
+    		<forward name="add_success" path="/user/user_maint.do?command=list" redirect="true"/>
+    		<forward name="modify_success" path="/user/user_maint.do?command=list" redirect="true"/>
+    		<forward name="find_success" path="/user/user_modify.jsp"/>
+		</action>
+	</action-mappings>
+</struts-config>
+

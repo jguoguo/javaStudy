@@ -1,0 +1,5 @@
+Extension-Name: org.apache.struts.examples.mailreader
+Specification-Vendor: The Apache Software Foundation
+Specification-Version: 1.0
+Implementation-Vendor: The Apache Software Foundation
+Implementation-Version: 0.1-dev

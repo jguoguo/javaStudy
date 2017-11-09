@@ -1,0 +1,6 @@
+login.form.field.username=用户
+login.form.field.password=密码
+login.form.button.login=登录
+login.success={0},登录成功
+login.user.not.found=用户不能找到,用户名称=【{0}】
+login.password.error=密码错误

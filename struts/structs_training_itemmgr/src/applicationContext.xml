@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+	<bean id="com.bjpowernode.drp.service.ItemService" class="com.bjpowernode.drp.service.ItemServiceImpl"/>
+	<bean id="com.bjpowernode.drp.dao.ItemDao" class="com.bjpowernode.drp.dao.ItemDao4MySqlImpl"/>
+	<bean id="com.bjpowernode.drp.service.DataDictService" class="com.bjpowernode.drp.service.DataDictServiceImpl"/>
+</beans>

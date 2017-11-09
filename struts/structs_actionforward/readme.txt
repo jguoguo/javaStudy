@@ -1,0 +1,10 @@
+ActionForward的使用
+1.了解redirect属性，重定向或转发
+2.了解全局和局部ActionForward，全局：所有的都能用，局部的只有本Action能用，如果全局和局部ActionForward名字相同，则谁近用谁
+3.了解放到WEB-INF下的资源是最安全，可以将jsp放到WEB-INF下，以后只要控制Action就可以了
+4.Struts-config.xml文件下不能在运行期修改
+5.了解手动控制转向，必须返回null给struts框架，而不是ActionFoward对象，MustLoginAction
+6.了解动态ActionForward,动态的ActionForward可以运行期修改，DynaActionForwardTestAction
+
+action-mappings:保存配置信息
+forward:是属性，是转向信息
