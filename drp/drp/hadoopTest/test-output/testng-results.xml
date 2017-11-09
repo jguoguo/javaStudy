@@ -1,0 +1,10 @@
+<testng-results>
+  <reporter-output>
+  </reporter-output>
+  <suite name="hadoopTest" duration-ms="3" started-at="2016-02-17T15:37:29Z" finished-at="2016-02-17T15:37:29Z">
+    <groups>
+    </groups>
+    <test name="org.dragon.hadoop.hdfs.HDFSFsTest" duration-ms="3" started-at="2016-02-17T15:37:29Z" finished-at="2016-02-17T15:37:29Z">
+    </test>
+  </suite>
+</testng-results>

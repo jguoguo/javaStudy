@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" 
+	xmlns="http://java.sun.com/xml/ns/j2ee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<servlet>
+		<servlet-name>JSTLServlet</servlet-name>
+		<servlet-class>com.bjpowernode.jstl.JSTLServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>JSTLServlet</servlet-name>
+		<url-pattern>/servlet/JSTLServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>JstlCoreServlet</servlet-name>
+		<servlet-class>com.bjpowernode.jstl.JstlCoreServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>JstlCoreServlet</servlet-name>
+		<url-pattern>/servlet/JstlCoreServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>JstlFmtServlet</servlet-name>
+		<servlet-class>com.bjpowernode.jstl.JstlFmtServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>JstlFmtServlet</servlet-name>
+		<url-pattern>/servlet/JstlFmtServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>JstlFnServlet</servlet-name>
+		<servlet-class>com.bjpowernode.jstl.JstlFnServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>JstlFnServlet</servlet-name>
+		<url-pattern>/servlet/JstlFnServlet</url-pattern>
+	</servlet-mapping>
+</web-app>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+	<bean id="itemDao" class="com.bjpowernode.drp.basedata.dao.ItemDao4OracleImpl"></bean>
+	<bean id="itemManager" class="com.bjpowernode.drp.basedata.manager.ItemManagerImpl"></bean>
+</beans>
+

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hjxx>
+	<!-- 呼叫统计信息 -->
+	<hjtj>
+		<!-- 今日呼叫量 -->
+		<jrhjl></jrhjl>
+		<!-- 有效通话 -->
+		<yxth></yxth>
+		<!-- 无效通话 -->
+		<wxth></wxth>
+		<!-- 有效通话成功率 -->
+		<yxthcgl></yxthcgl>
+		<!-- 有效通话成功率同比昨日 -->
+		<yxthcgltbzr></yxthcgltbzr>
+		<!-- 潜在意向客户 -->
+		<qzyxkh></qzyxkh>
+		<!-- 潜在意向客户同比昨日 -->
+		<qzyxkhtbzr></qzyxkhtbzr>
+	</hjtj>
+	<!-- 呼叫明细 -->
+	<hjmx>
+		<!-- 呼叫记录 -->
+		<hjjl>
+			<!-- 原始号码 -->
+			<yshm></yshm>
+			<!-- 呼叫情况 -->
+			<hjqk></hjqk>
+			<!-- 姓名 -->
+			<xm></xm>
+		</hjjl>
+	</hjmx>
+</hjxx>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bjpowernode.test.TestNg" failures="0" tests="2" time="0.042" errors="0">
+  <properties/>
+  <testcase name="random" time="0.0080" classname="com.bjpowernode.test.TestNg"/>
+  <testcase name="random" time="0.0060" classname="com.bjpowernode.test.TestNg"/>
+</testsuite>

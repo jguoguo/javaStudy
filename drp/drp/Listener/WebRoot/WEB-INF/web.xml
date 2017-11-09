@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <display-name></display-name>	
+
+	<listener>
+		<listener-class>com.xlj.listener.SessionListenerTest</listener-class>
+	</listener>
+	<listener>
+		<listener-class>com.xlj.listener.ListenerTest</listener-class>
+	</listener>
+	
+	<listener>
+		<listener-class>com.xlj.listener.singleton.LoginSessionListener</listener-class>
+	</listener>
+	
+	<listener>
+		<listener-class>com.xlj.listener.MyContextListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>com.xlj.listener.MySessionListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>com.xlj.listener.MyResultListener</listener-class>
+	</listener>
+
+	
+</web-app>

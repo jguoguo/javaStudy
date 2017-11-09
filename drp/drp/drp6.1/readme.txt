@@ -1,0 +1,152 @@
+v1.0:
+	1.将html拷贝到web项目中
+	2.建立DbUtil
+	3.将Oracle jdbc驱动拷贝到WEB-INF/lib下
+	4.建立xml文件sys-conf.xml
+	5.将dom4j相关的jar包拷贝到WEB-INF/lib下
+		*dom4j-1.6.1.jar
+		*jaxen-1.1-beta-7.jar
+		
+V1.1
+	1.完成用户添加业务逻辑
+	
+V1.2
+	*采用javascript完成用户添加合法性检查
+	
+V1.3
+	*添加用户
+	*设置字符集
+V1.4
+	*完成是否重复的检测
+	*保持页面数据
+V1.5
+	*采用Ajax完成用户代码是否重复的判断
+V1.6
+	*采用Ajax完成用户代码是否重复的判断（采用匿名函数）
+V1.7
+	*完成用户查询页面控制(选中所有的checkbox)
+V1.8
+	*完成分页业务逻辑部分实现
+	*封装PageModel对象
+	*将每页的数据输出到jsp
+V1.9
+	*PageModel采用泛型封装
+V2.0
+	*完成全部用户查询页面控制
+	*定义修改用户和删除用户方法
+V2.2
+	*完成用户删除
+V2.3
+	*完成Filter字符集设置
+V2.4
+	*完成用户登录
+V2.5
+	*演示SQL Injection
+V2.6
+	*批量删除用户
+V2.7
+	*建立ClientManager和clientTreeReader
+	*加入放回Tree的HTML字符串方法
+	*完成分销商树形结构的读取
+V2.8
+	*完成分销商实体模型的建立
+	*根据分销商或区域的id取得名称
+V2.9
+	*修改区域
+V3.0
+	*修改分销商
+	*id生成器
+V3.1
+	*加入添加分销商或区域的方法
+	*采用Ajax+Servlet完成分销商代码是否重复的判断
+	*在ClientManager中加入findAllClient()和findAllAimClient()方法
+	*加入AimClient类
+	*加入删除分销商方法
+V3.2
+	*完成添加区域
+V3.3
+	*完成添加分销商
+V3.4
+	*删除区域或分销商
+V3.5
+	*建立物料实体模型
+	*建立持久层结构
+V3.6
+	*完成物料添加
+	*注意GET提交的编码问题
+	*主键重复的判断
+	*Dao的设计粒度问题
+	*手动处理的异常
+V3.7
+	*声明式异常
+	*400和500异常的配置
+V3.8
+	*加入根据id查询物料
+	*分页查询
+	*Servlet传递初始化参数
+	*<context-param>传递参数
+	*加深对pageContext,request,session,application的理解
+V3.9
+	*完成物料修改
+V4.0
+	*完成物料删除
+	*第一种方案采用图片名称和物料代码名称一致
+V4.1
+	*使用第二种方案，将图片名称保存到数据库中
+V4.2
+	*重构物料部分，抽取servlet抽象类
+V4.3
+	*采用抽象工厂重构物料部分
+	*创建beans-config.xml文件
+	*采用DOM4J取得beans-config.xml文件
+	*将BeanFactory放置到ServletContext中
+V4.4
+	*进一步改造抽象工厂
+	*删除DefaultBeanFactory，将BeanFactory接口修改为具体类，并修改为创建两个系统的产品
+V4.5
+	*重构BeanFactory，修改取得对象的方法
+V4.6
+	*加入会记核算期维护和密码修改作业
+V4.7
+	*将物料维护部分修改为JSTL
+	*将JSTL相关jar包引入到WEB/INF下
+V4.8
+	*建立流向单部分的实体类
+V4.9
+	*建立流向单Dao层和Manager层接口
+V5.0
+	*实现添加流向单Dao层方法和Manager层方法
+	*将Connection封装到ThreadLocal中
+V5.1
+	*实现添加流向单Dao层
+V5.2
+	*完成添加流向单表示层FlowCardServlet
+	*抽取BaseServlet
+V5.3
+	*集成添加流向单页面
+	*加入常量增删改查，加入到ServletContext中
+V5.4
+	*实现查询流向单Dao代码
+	*实现查询流向单Manager代码
+V5.5
+	*完成流向单查询serlvet
+V5.6
+	*将分页查询command删除
+	*删除流向单
+	*送审流向单
+V5.7
+	*采用动态代理封装事务
+V5.8
+	*将公共的部分放到jsp中采用include进行包含
+	*了解静态包含和动态包含
+	*了解${pageContext.request.contextPath}
+V5.9
+	*HttpSessionAttributeListener
+	*ServletContextListener
+	*HttpSessionListener
+V6.0
+	*引入jar包
+	*jcommon-1.0.5.jar
+	*jfreechart-1.0.2.jar
+V6.1
+	*完成登录验证码

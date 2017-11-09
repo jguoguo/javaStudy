@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+	<service-class>
+		<service id="itemManager" class="com.bjpowernode.drp.basedata.manager.ItemManagerImpl"></service>
+	</service-class>
+	<dao-class>
+		<dao id="itemDao" class="com.bjpowernode.drp.basedata.dao.ItemDao4OracleImpl"></dao>
+	</dao-class>
+</beans>
+

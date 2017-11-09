@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<script language="javascript">
+		
+			function count(){
+				//alert(document.getElementById("ctn").value);
+				var first=document.getElementById("first").value;
+				var ctn=document.getElementById("ctn").value;
+				var second=document.getElementById("second").value;
+				var result=0;
+				var t1=parseInt(first);
+				var t2=parseInt(second);
+				switch(ctn){
+					case "01":
+						result=t1+t2;
+						break;
+					case "02":
+						result=t1-t2;
+						break;
+					case "03":
+						result=t1*t2;
+						break;
+					case "04":
+						result=t1/t2;
+						break;
+				}
+				document.getElementById("result").value=result;
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" id="first">
+		<select name="ctn" id="ctn">
+			<option value="01">+</option>
+			<option value="02">-</option>
+			<option value="03" >*</option>
+			<option value="04">/</option>
+		</select>
+		<input type="text" id="second">
+		<label>=</label>
+		<input type="text" id="result">
+		<p>
+		<input type="button" id="btn" value="¼ÆËã" onclick="count()">
+	</body>
+</html>

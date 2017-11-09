@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<db-info>
+		<driver-name>oracle.jdbc.driver.OracleDriver</driver-name>
+		<url>jdbc:oracle:thin:@127.0.0.1:1521:ORCL</url>
+		<user-name>drp1</user-name>
+		<password>drp1</password>
+	</db-info>
+	<dao-factory>
+		<item-dao-factory>com.bjpowernode.drp.basedata.dao.ItemDaoFactory4Oracle</item-dao-factory>
+	</dao-factory>
+</config>
+

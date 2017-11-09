@@ -1,0 +1,33 @@
+<testng-results>
+  <reporter-output>
+  </reporter-output>
+  <suite name="drp4.6">
+    <groups>
+      <group name="functional-test">
+        <method signature="com.bjpowernode.test.TestNg.random(java.lang.Integer)" name="random" class="com.bjpowernode.test.TestNg"/>
+      </group>
+    </groups>
+    <test name="com.bjpowernode.test.TestNg">
+      <class name="com.bjpowernode.test.TestNg">
+        <test-method status="PASS" signature="random(java.lang.Integer)" name="random" duration-ms="6" started-at="2015-06-08T19:45:55Z" finished-at="2015-06-08T19:45:55Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[-39876490]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="random(java.lang.Integer)" name="random" duration-ms="8" started-at="2015-06-08T19:45:55Z" finished-at="2015-06-08T19:45:55Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1421969337]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+      </class>
+    </test>
+  </suite>
+</testng-results>

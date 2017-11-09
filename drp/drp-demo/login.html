@@ -1,0 +1,171 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=GB18030">
+		<script language="javascript">
+			function init(){
+				loginForm.userId.focus();
+				}
+			function submitForm(){
+				loginForm.submit();
+				}
+		</script>
+	</head>
+	<body leftmargin="0" topmargin="0" onLoad="init()">
+		<form name="loginform" action="main.html" method="post">
+			<table cellspacing=0 cellpadding=0 width="100%" border=0>
+				<tbody>
+					<tr height=50>
+						<td width=1 background="images/logobar_left.gif">
+							<IMG height=50 src="images/spacer.gif" width=1 border=0>
+						</td>
+						<td width="416" align=left vAlign=center background="images/logobar_mid.gif">
+							<em><strong><font color="#FFFFFF" size="+3" face="宋体">
+                            <img height="1" src="images/spacer.gif" width="5" border=0>DRP分销管理系统</font></strong></em>
+						</td>
+                        <td width="478" align="right" valign=center background="images/logobar_mid.gif">
+                        	<div align="right">
+                            	<a href="#"><img height="25" src="images/banner_help_button.gif" width="60" border=0 name="banner_help_button"></a>
+                                <img height="1" src="images/spacer.gif" width="5" border=0>
+                            </div>	
+                        </td>       
+					</tr>
+				</tbody>
+			</table>
+            <table height="80%" cellspacing="0" cellpadding="0" width="100%" border="0">
+            	<tbody>
+                	<tr>
+                    	<!-- The login dialog -->
+                    	<td valign="middle" align="center" width="100%">
+                        	<!-- login dialog -->
+                        	<table cellpadding="0" cellspacing="0" border="0">
+                            	<!-- title bar -->
+                            	<tbody>
+                                	<tr>
+                                    	<!-- this row is kind of a dummy row to set the column widths for the whole page-->
+                                    	<td width="8"><img height="1" src="images/spacer.gif" width="8" border=0></td>
+                                        <!-- left edge -->
+                                        <td width="15"><img height="1" src="images/spacer.gif" width="15" border=0></td>
+                                        <!-- title image/left margin -->
+                                        <td width="200"><img height="1" src="images/spacer.gif" width="200" border=0></td>
+                                        <!-- main area -->
+                                        <td width="14"><img height="1" src="images/spacer.gif" width="14" border=0></td>
+                                        <!-- right margin -->
+                                        <td width="11"><img height="1" src="images/spacer.gif" width="11" border=0></td>
+                                        <!-- right edge -->
+                                    </tr>
+                                    <tr>
+                                    	<td width="8"><img height="9" src="images/top_left.gif" width="8" border=0></td>
+                                        <td background="images/top.gif" colspan="3"><img height="9" src="images/spacer.gif" width="1" border=0></td>
+                                        <td width="11"><img height="9" src="images/top_right.gif" width="11" border=0></td>
+                                    </tr>
+                                    <tr>
+                                    	<td width="8" background="images/left.gif"><img height="15" src="images/spacer.gif" width="8" border=0></td>
+                                        <td align="left" width="140" bgcolor="#000033" colspan="3"><font face="verdana,arial,helvetica,sans-serif"
+                                        color="#ffffff" size="-1">&nbsp;<b>登陆DRP</b></font></td>
+                                        <td width="11" background="images/right.gif"><img height="15" src="images/spacer.gif" width="11" border=0></td>
+                                    </tr>
+                                    <tr>
+                                    	<td width="8"><img height="9" src="images/middle_left.gif" width="8" border=0></td>
+                                        <td background="images/top.gif" colspan="3"><img height="9" src="images/spacer.gif" width="11" border=0></td>
+                                        <td width="11"><img height="9" src="images/middle_right.gif" width="11" border=0></td>
+                                    </tr>
+                                    <tr bgcolor="white">
+                                    	<td width="8" background="images/left.gif"><img height="1" src="images/spacer.gif" width="8" border=0></td>
+                                        <td></td>
+                                        <td>
+                                        	<table cellspacing="5" cellpadding="0" align="center" background="images/login1x1.gif" border="0" valign="middle">
+												<tbody>
+													<tr>
+														<td><br></td>
+													</tr>
+													<tr>
+														<td align="left">
+															<font face="verdana, arial, helvetica, sans-serif" size="-1">用户名：&nbsp;</font>
+														</td>
+														<td align="left">
+															<input name="userId" type="text" size="20" maxlength="20">
+														</td>
+													</tr>
+													<tr>
+														<td align="left">
+															<font face=="verdana, arial, helvetica, sans-serif" size="-1">密&nbsp&nbsp码：</font>
+														</td>
+														<td align="left">
+															<input name="password" type="password" size="20" maxlength="20">
+														</td>
+													</tr>
+													<tr>
+														<td align="left">
+															<font face="verdana, arial, helvetica, sans-serif" size="-1">验证码：</font>
+														</td>
+														<td align="left">
+															<input name="userId2" type="text" size="6" maxlength="6">&nbsp;<img src="images/authImage.jpg">
+														</td>
+													</tr>
+													<tr>
+														<td><br></td>
+													</tr>
+												</tbody>
+											</table>
+                                        </td>
+                                        <td></td>
+                                        <td width="8" background="images/right.gif">
+                                        	<img height="1" src="images/spacer.gif" width="8" border=0>
+                                        </td>
+                                    </tr>
+                                    <!-- end of inner main area, right side -->
+                                    <!-- inner button bar -->
+                                    <tr>
+                                    	<td width="8">
+                                        	<img height="6" src="images/command_top_left.gif" width="8" border=0>
+                                        </td>
+                                        <td background="images/command_top.gif" colspan="3">
+                                        	<img height="6" src="images/spacer.gif" border=0>
+                                        </td>
+                                        <td width="11">
+                                        	<img height="6" src="images/command_top_right.gif" width="11" border=0>
+                                        </td>
+                                    </tr>
+                                    <tr bgcolor="#cccccc">
+                                    	<td width="8">
+                                        	<img height="20" src="images/command_mid_left.gif" width="8" border=0>
+                                        </td>
+                                        <td><br></td>
+                                        <!-- command buttons -->
+                                        <td align="right" colspan="2">
+                                            <table cellpadding="0" cellspacing="0" border="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="javascript:submitForm()"><img height="20" src="images/login_button.gif" width="71" border=0 name="button"></a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                        <td width="11">
+                                            <img height="20" src="images/command_mid_right.gif" width="11" border=0>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                    	<td width="8">
+                                        	<img height="8" src="images/command_bottom_left.gif" width="8" border=0>
+                                        </td>
+                                        <td background="images/command_bottom.gif" colspan="3">
+                                        	<img height="8" src="images/spacer.gif" width="1" border=0>
+                                        </td>
+                                        <td width="11">
+                                        	<img height="8" src="images/command_bottom_right.gif" width="11" border=0>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <center></center>
+		</form>
+        
+	</body>
+</html>

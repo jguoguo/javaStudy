@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<title>演示radio输入域</title>
+	</head>
+	<body >
+		<h1>演示radio输入域</h1>
+		<hr>
+
+		<form action="15.html" method="post">
+			姓名：<input type="text" name="username" ><br>
+			计算机语言：
+			<input type="radio" name="language">C语言
+			<input type="radio" name="language">Foxpro
+			<input type="radio" name="language">vb
+			<input type="radio" name="language" checked="true">delphi
+			<p>
+			<input type="submit" value="保存">
+		</form>
+		
+	</body>
+</html>

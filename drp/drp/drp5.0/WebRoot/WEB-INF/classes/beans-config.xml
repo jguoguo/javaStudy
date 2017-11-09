@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+	<service-class>
+		<service id="com.bjpowernode.drp.basedata.manager.ItemManager" class="com.bjpowernode.drp.basedata.manager.ItemManagerImpl"></service>
+	</service-class>
+	<dao-class>
+		<dao id="com.bjpowernode.drp.basedata.dao.ItemDao" class="com.bjpowernode.drp.basedata.dao.ItemDao4OracleImpl"></dao>
+		<dao id="com.bjpowernode.drp.flowcard.dao.FlowCardDao" class="com.bjpowernode.drp.flowcard.dao.impl.FlowCardDaoImpl"></dao>
+	</dao-class>
+</beans>
+
