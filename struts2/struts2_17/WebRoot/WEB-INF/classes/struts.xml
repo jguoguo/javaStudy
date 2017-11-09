@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- 当struts.xml配置文件发生修改，会立即加载 -->
+	<constant name="struts.configuration.xml.reload" value="true"></constant>
+	<!-- 提供更加友好的错误提示 -->
+	<constant name="struts.devMode" value="true"></constant>
+	<!-- 需要基础struts-default包 -->
+	<package name="struts2" extends="struts-default">
+	
+		
+		<interceptors>
+			<!-- 定义记录日志拦截器 -->
+			<interceptor name="myLogInterceptor" class="com.bjpowernode.struts2.LogInterceptor"></interceptor>
+			<!-- 定义检查安全性 -->
+			<interceptor name="mySecurityInterceptor" class="com.bjpowernode.struts2.MySecurityInterceptor"></interceptor>
+			
+			<interceptor-stack name="myInterceptorStack">
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="myLogInterceptor"/>
+				<interceptor-ref name="mySecurityInterceptor"/>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 定义缺省拦截器，所有的action都会得到使用 -->
+		<default-interceptor-ref name="myInterceptorStack"/>
+		
+	
+		<action name="login" class="com.bjpowernode.struts2.LoginAction">
+		
+			<!-- 使用日志记录拦截器
+				如果自定义了拦截器，必须显示引用Struts2默认的拦截器		
+			-->
+			<!-- 引用Struts2默认的拦截器 -->
+			<!--
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			-->
+			<!-- 使用日志记录拦截器  -->
+			<!--
+			<interceptor-ref name="myLogInterceptor"></interceptor-ref>
+			-->
+			<!-- 使用检查安全性拦截器 -->
+			<!--
+			<interceptor-ref name="mySecurityInterceptor"></interceptor-ref>
+			-->
+			<!--
+			<interceptor-ref name="myInterceptorStack"></interceptor-ref>
+			-->
+			<result name="success">/login_success.jsp</result>
+			<result name="error">/login_error.jsp</result>
+		</action>
+	</package>
+</struts>

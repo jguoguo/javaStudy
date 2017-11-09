@@ -1,0 +1,6 @@
+Struts2的Action访问Servlet API
+
+可以通过实现装配接口，完成对Servlet API的访问
+	*ServletRequestAware取得HttpServletRequest对象
+	*ServletResponseAware取得HttpServletResponse对象
+	*通过ServletContextAware取得ServletContext对象（工具类）

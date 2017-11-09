@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- 当struts.xml配置文件发生修改，会立即加载 -->
+	<constant name="struts.configuration.xml.reload" value="true"></constant>
+	<!-- 提供更加友好的错误提示 -->
+	<constant name="struts.devMode" value="true"></constant>
+	<!-- 需要基础struts-default包 -->
+
+
+	<!-- 设置字符编码 -->
+	<constant name="struts.i18n.encoding" value="GB18030"></constant>
+	<!-- 无法区分出使用哪个action，实现错误-->
+	<!-- 
+	<package name="user-package" extends="struts-default">
+		<action name="add" class="com.bjpowernode.struts2.UserAction">
+			<result name="success">/add_user_success.jsp</result>
+		</action>
+	</package>
+
+
+	<package name="item-package" extends="struts-default">
+		<action name="add" class="com.bjpowernode.struts2.ItemAction">
+			<result name="success">/add_item_success.jsp</result>
+		</action>
+	</package>
+	-->
+	
+	<!-- 使用命名空间-->
+	<package name="user-package" extends="struts-default" namespace="/user">
+		<action name="add" class="com.bjpowernode.struts2.UserAction">
+			<result name="success">/add_user_success.jsp</result>
+		</action>
+	</package>
+
+
+	<package name="item-package" extends="struts-default" namespace="/item">
+		<action name="add" class="com.bjpowernode.struts2.ItemAction">
+			<result name="success">/add_item_success.jsp</result>
+		</action>
+	</package>
+	
+</struts>
