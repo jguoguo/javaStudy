@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.xlj.hibernate.bean">
+	<class name="Ship" table="tb_ship">
+		<id name="id" column="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="name"></property>
+		<set name="sailors" inverse="true"><!-- sailors集合属性 -->
+			<key column="ship_id"></key>
+			<one-to-many class="com.xlj.hibernate.bean.Sailor"/><!-- 一对多 -->
+		</set>
+		<!-- 船长，这里用多对一配置 -->
+		<many-to-one name="captain" cascade="persist" column="caption_id" unique="true"></many-to-one>
+	</class>
+</hibernate-mapping>

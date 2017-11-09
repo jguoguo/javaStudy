@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.xlj.hibernate.bean">
+	<class name="Tag" table="tb_tag">
+		<id name="id" column="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="name" column="name" type="String"></property>
+		<set name="posts" table="tb_tag_post" inverse="true"><!-- set配置集合属性，table指定表名 -->
+			<key column="tag_id"></key><!-- 外键配置，多对多配置 -->
+			<many-to-many column="post_id" class="com.xlj.hibernate.bean.Post"></many-to-many>
+		</set>
+	</class> 
+</hibernate-mapping>

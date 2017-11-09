@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.xlj.hibernate.bean">
+	<class name="Post" table="tb_post">
+		<id name="id" column="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="title"></property>
+		<property name="content" type="text"></property>
+		
+		<set name="tags" table="tb_tag_post" cascade="persist" lazy="false"><!-- list配置 -->
+			<key column="post_id"></key><!-- 列配置 -->
+			<many-to-many column="tag_id" class="com.xlj.hibernate.bean.Tag" where=" name!=''" not-found="exception"></many-to-many><!-- 多对多属性 -->
+		</set>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.xlj.hibernate.bean"><!-- 所在的包 -->
+	<class name="Clazz" table="tb_class">			<!-- 实体类 -->
+		<id name="id" column="id">					<!-- 主键 -->
+			<generator class="native"></generator>	<!-- 数据库自增长 -->
+		</id>
+		<property name="name"></property>			<!-- 班级名称 -->
+		<bag name="students" inverse="true" order-by="id desc"><!-- List集合属性 -->
+			<key column="class_id"></key>
+			<one-to-many class="com.xlj.hibernate.bean.Student"/><!-- 元素类 -->
+		</bag>
+	</class>
+</hibernate-mapping>

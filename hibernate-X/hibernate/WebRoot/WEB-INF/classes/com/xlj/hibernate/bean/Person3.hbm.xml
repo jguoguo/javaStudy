@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+          "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.xlj.hibernate.bean">
+	<class name="Person3" table="tb_person3">
+		<id name="id" column="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="name"></property>
+		<bag name="emails" cascade="all" lazy="false"
+			where="email like '%@%' " order-by="email"
+		><!-- 配置where条件 -->
+			<key column="email_id"></key><!-- 查找依据 -->
+			<element type="string" column="email"></element><!-- 字符串Email -->
+		</bag>
+	</class>
+</hibernate-mapping>
