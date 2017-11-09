@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"><!-- 数据源 -->
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property><!-- 驱动 -->
+		<property name="url" value="jdbc:mysql://localhost:3306/spring"></property>
+		<property name="username" value="root"></property>
+		<property name="password" value="Asdf-12345"></property>
+	</bean>
+	<bean id="personDao" class="com.xlj.spring.dao.PersonDaoImpl" 
+		depends-on="dataSource" init-method="initDatabase"><!-- 初始化方法 -->
+		<property name="dataSource" ref="dataSource"></property><!-- 设置数据源 -->
+	</bean>
+	
+	<!-- JDBC 事务管理 -->
+	<bean id="jdbcTransactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+
+	<!-- 为所有的方法配置事务 -->
+	<bean id="transactionAttributeSource"
+		class="org.springframework.transaction.interceptor.NameMatchTransactionAttributeSource">
+		<property name="properties">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop><!-- 事务类型 -->
+			</props>
+		</property>
+	</bean>
+	
+	<!-- TransactionRun -->
+	<bean id="transactionRun"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager"
+			ref="jdbcTransactionManager" />
+		<property name="target">
+			<bean
+				class="com.xlj.spring.dao.TransactionRun">
+				<property name="personDao" ref="personDao"></property>
+			</bean>
+		</property>
+		<property name="transactionAttributeSource"
+			ref="transactionAttributeSource" />
+	</bean>
+	
+	<bean id="sessionFactory" 
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean" destroy-method="destroy"><!-- SessionFactory实现类 -->
+		<property name="dataSource" ref="dataSource"></property>
+		<!-- 该package下所有类都会被当做实体类加载 -->
+		<property name="annotatedPackages" value="classpath:/com/xlj/spring/orm"></property>
+		<property name="annotatedClasses"><!-- 配置实体类 -->
+			<list>
+				<value>com.xlj.spring.orm.Cat</value>
+			</list>
+		</property>
+		<property name="hibernateProperties"><!-- hibernate属性 -->
+			<props><!-- SQL方言 -->
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">true</prop><!-- 输出SQL语句 -->
+				<prop key="hibernate.format_sql">true</prop><!-- 格式化SQL语句 -->
+				<prop key="hibernate.hbm2ddl.auto">create</prop><!-- 创建表结构 -->
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="catDao" class="com.xlj.spring.orm.CatDaoImpl"><!-- Dao对象 -->
+		<property name="sessionFactory" ref="sessionFactory"></property><!-- 设置sessionFactory -->
+	</bean>
+	
+		<bean id="hibernateTransactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="hibernateTransactionAttributeSource"
+		class="org.springframework.transaction.interceptor.NameMatchTransactionAttributeSource">
+		<property name="properties">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+	
+	
+	<bean id="catService"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager"
+			ref="hibernateTransactionManager">
+		</property>
+		<property name="target">
+			<bean
+				class="com.xlj.spring.orm.CatServiceImpl">
+				<property name="catDao" ref="catDao"></property>
+			</bean>
+		</property>
+		<property name="transactionAttributeSource"
+			ref="hibernateTransactionAttributeSource">
+		</property>
+	</bean>
+</beans>

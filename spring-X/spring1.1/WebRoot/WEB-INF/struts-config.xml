@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<form-beans>
+		<form-bean name="catForm" type="com.xlj.spring.form.CatForm"></form-bean>
+	</form-beans>
+	<global-exceptions>
+		<exception key="exception" type="java.lang.Exception" path="/form/exception.jsp"></exception>
+	</global-exceptions>
+	
+	<action-mappings>
+		<action attribute="catForm"
+				input="/form/cat.jsp"
+				name="catForm"
+				path="/cat"
+				scope="request"
+				type="com.xlj.spring.action.CatAction"
+		>
+		<forward name="list" path="/form/listCat.jsp"></forward>
+		</action>
+	</action-mappings>
+</struts-config>
+

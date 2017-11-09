@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+	<!-- 配置JSP前缀后缀 -->
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix">
+			<value>/WEB-INF/jsp/</value><!-- JSP前缀，一般为文件夹 -->
+		</property>
+		<property name="suffix">
+			<value>.jsp</value><!-- JSP后缀，一般为.jsp -->
+		</property>
+	</bean>
+	<!-- 配置URL Mapping -->
+	<bean id="urlHandlerMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mapping"><!-- URL映射 -->
+			<props>
+				<prop key="cat.mvc">catController</prop><!-- URL映射，包括后缀 -->
+			</props>
+		</property>
+	</bean>
+	<!-- 配置Controller -->
+	<bean id="catController" class="com.xlj.spring.mvc.CatController">
+		<property name="catService" ref="catService"></property><!-- 设置属性依赖 -->
+	</bean>
+</beans>
