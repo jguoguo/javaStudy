@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  
+  <form-beans>
+  	<form-bean name="visitDetailForm" type="com.xlj.struts.form.VisitDetailForm"></form-bean>
+  </form-beans>
+  <global-exceptions />
+  <global-forwards />
+  <action-mappings>
+  	<action attribute="visitDetailForm"
+  			input="/logo.jsp"
+  			name="visitDetailForm"
+  			path="/visitDetail"
+  			scope="request"
+  			type="com.xlj.struts.action.VisitDetailAction"
+  	>
+  		<forward name="logo" path="/logo.jsp"></forward>
+  		<forward name="listOnline" path="/listOnline.jsp"></forward>
+  		<forward name="listDetail" path="/listDetail.jsp"></forward>
+  	</action>
+  </action-mappings>
+  <!-- 配置controller，把struts的action交给spring来管理 -->
+  <controller processorClass="org.springframework.web.struts.DelegatingRequestProcessor"></controller>
+</struts-config>
+

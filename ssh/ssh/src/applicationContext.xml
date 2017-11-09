@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean" destroy-method="destroy">
+		<property name="annotatedClasses">
+			<list>
+				<value>com.xlj.struts.bean.VisitDetail</value>
+				<value>com.xlj.struts.bean.VisitOnline</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">false</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+			</props>
+		</property>
+	</bean>
+	<!-- 属性配置，将从jdbc.properties中加载数据库的配置 -->
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location" value="classpath:jdbc.properties"></property>
+	</bean>
+	<!-- 数据源配置，用户名密码等配置在jdbc.properties中 -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="${jdbc.dirverClassName}"></property>
+		<property name="url" value="${jdbc.url}"></property>
+		<property name="username" value="${jdbc.username}"></property>
+		<property name="password" value="${jdbc.password}"></property>
+		<property name="testOnBorrow" value="true"></property>
+		<property name="testWhileIdle" value="true"></property>
+		<property name="validationQuery" value="select 1"></property>
+	</bean>
+	
+	<!-- Hibernate事务管理器 -->
+	<bean id="hibernateTranscationManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<!-- 事务管理策略，通配符 “*”配置对所有方法配置事务-->
+	<bean id="hibernateTransactionAttributeSource"
+			class="org.springframework.transaction.interceptor.NameMatchTransactionAttributeSource">
+		<property name="properties">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!--DAO对象，配置事务管理器，以及事务管理策略 -->
+	<bean id="dao" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager" ref="hibernateTranscationManager"></property>
+		<property name="target">
+			<bean class="com.xlj.struts.dao.impl.DaoImpl">
+				<property name="sessionFactory" ref="sessionFactory"></property>
+			</bean>
+		</property>
+		<property name="transactionAttributeSource" ref="hibernateTransactionAttributeSource"></property>
+	</bean>
+	<!-- VisitDetailAction配置 -->
+	<bean name="/visitDetail" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="target">
+			<bean class="com.xlj.struts.action.VisitDetailAction">
+				<property name="dao" ref="dao"></property>
+			</bean>
+		</property>
+	</bean>
+</beans>

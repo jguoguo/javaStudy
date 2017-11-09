@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <display-name></display-name>	
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+  	<servlet-name>PieChart</servlet-name>
+  	<servlet-class>com.xlj.jfreechart.PieChartServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>PieChart</servlet-name>
+  	<url-pattern>/pie</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+  	<servlet-name>BarChartServlet</servlet-name>
+  	<servlet-class>com.xlj.jfreechart.BarChartServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>BarChartServlet2</servlet-name>
+    <servlet-class>com.xlj.jfreechart.BarChartServlet2</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>LineChartServlet</servlet-name>
+    <servlet-class>com.xlj.jfreechart.LineChartServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AreaChartServlet</servlet-name>
+    <servlet-class>com.xlj.jfreechart.AreaChartServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>TimeChartServlet</servlet-name>
+    <servlet-class>com.xlj.jfreechart.TimeChartServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CombinedChartServlet</servlet-name>
+    <servlet-class>com.xlj.jfreechart.CombinedChartServlet</servlet-class>
+  </servlet>
+
+
+
+
+
+  
+  <servlet-mapping>
+  	<servlet-name>BarChartServlet</servlet-name>
+  	<url-pattern>/bar</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>BarChartServlet2</servlet-name>
+    <url-pattern>/bar2</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LineChartServlet</servlet-name>
+    <url-pattern>/LineChartServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AreaChartServlet</servlet-name>
+    <url-pattern>/AreaChartServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TimeChartServlet</servlet-name>
+    <url-pattern>/TimeChartServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CombinedChartServlet</servlet-name>
+    <url-pattern>/CombinedChartServlet</url-pattern>
+  </servlet-mapping>
+</web-app>

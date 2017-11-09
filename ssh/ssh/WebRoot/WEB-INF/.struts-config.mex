@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/visitDetail.do" location="50,50" dimension="251,104" />
+  <StrutsActivity path="/logo.gif" location="650,50" dimension="82,53" />
+  <StrutsActivity path="/logo.jsp" location="950,50" dimension="84,53" />
+  <StrutsActivity path="/listDetail.jsp" location="50,250" dimension="106,53" />
+  <StrutsActivity path="/listOnline.jsp" location="350,250" dimension="110,53" />
+  <StrutsTransition id="/visitDetail.do,listOnline,/listOnline.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="175,154" />
+      <AbsolutePoint location="175,276" />
+      <AbsolutePoint location="350,276" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/logo.jsp,null,/visitDetail.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="962,103" />
+      <AbsolutePoint location="962,118" />
+      <AbsolutePoint location="301,118" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/visitDetail.do,logo,/logo.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="301,148" />
+      <AbsolutePoint location="992,148" />
+      <AbsolutePoint location="992,103" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/visitDetail.do,listDetail,/listDetail.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="103,154" />
+      <AbsolutePoint location="103,250" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/logo.gif,null,/visitDetail.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="650,76" />
+      <AbsolutePoint location="301,76" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

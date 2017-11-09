@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<form-beans>
+		<form-bean name="personForm" type="com.xlj.forum.struts.form.PersonForm"></form-bean>
+	</form-beans>
+	
+	
+	<global-exceptions>
+		<exception key="login" type="java.lang.Exception"
+			handler="com.xlj.forum.struts.exception.ForumExceptionHandler"
+		></exception>
+	</global-exceptions>
+	
+	<action-mappings>
+		<action attribute="personForm"
+				input="/form/listPerson.jsp"
+				name="personForm"
+				path="/person"
+				scope="request"
+				parameter="action"
+				type="com.xlj.forum.struts.action.PersonAction"
+		>
+		<forward name="add" path="/form/addPerson.jsp"></forward>
+		<forward name="list" path="/form/listPerson.jsp"></forward>
+		</action>
+	</action-mappings>
+	
+
+	
+	<controller processorClass="org.springframework.web.struts.DelegatingRequestProcessor"></controller>
+</struts-config>
+
+
