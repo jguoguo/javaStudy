@@ -1,0 +1,1 @@
+hibernate jpa映射每个继承树一张表

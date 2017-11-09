@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping> 
+	<class name="com.bjpowernode.hibernate.Student" table="t_student">
+		<!--  第一种方案，在每个映射文件中配置
+		<cache usage="read-only"/>
+		-->
+		<id name="id">
+			<generator class="native"/>
+		</id>
+		
+		<property name="name"/>
+		<many-to-one name="classes" column="classesid"/>
+	</class>
+</hibernate-mapping>

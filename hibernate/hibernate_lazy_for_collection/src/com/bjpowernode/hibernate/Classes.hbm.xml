@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping> 
+	<class name="com.bjpowernode.hibernate.Classes" table="t_classes" lazy="false">
+		<id name="id">
+			<generator class="native"/>
+		</id>
+		
+		<property name="name"/>
+		<!--inverse为true,表示在一的一端不在管理  -->
+		<set name="students" inverse="true" >
+			<!-- 加在多的一端 -->
+			<key column="classesid"/>
+			<!--  
+			<key column="classesid" not-null="true"/>
+			-->
+			<one-to-many class="com.bjpowernode.hibernate.Student"/>
+		</set>
+	</class>
+</hibernate-mapping>

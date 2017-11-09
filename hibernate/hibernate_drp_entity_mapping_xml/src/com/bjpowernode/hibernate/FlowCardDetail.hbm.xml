@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.bjpowernode.hibernate.FlowCardDetail" table="t_flow_card_detail">
+		<id name="flowCardDetailId">
+			<generator class="native"/>
+		</id>
+		<property name="optQty"/>
+		<property name="adjustQty"/>
+		<property name="adjustReason"/>
+		<property name="adjustFlag"/>
+		<many-to-one name="AimClient"/>
+		<many-to-one name="item"/>
+		<many-to-one name="flowCard" column="flowCardNo"/>
+	</class>
+</hibernate-mapping>

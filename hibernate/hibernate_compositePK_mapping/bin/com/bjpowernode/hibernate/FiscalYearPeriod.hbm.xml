@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping> 
+	<class name="com.bjpowernode.hibernate.FiscalYearPeriod" table="t_fiscal_year_period">
+		<composite-id name="fisCalYearPeriodPK">
+			<key-property name="fiscalYear"></key-property>
+			<key-property name="fiscalPeriod"></key-property>
+		</composite-id>
+		<property name="beginDate" type="date"></property>
+		<property name="endDate" type="date"></property>
+		<property name="periodSts"></property>
+	</class>
+</hibernate-mapping>

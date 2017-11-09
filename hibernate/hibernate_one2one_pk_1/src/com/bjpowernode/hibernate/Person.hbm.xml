@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping> 
+	<class name="com.bjpowernode.hibernate.Person" table="t_person">
+		<id name="id">
+			<!--采用foreign生成策略，foreign会取得关联对象的标识  -->
+			<generator class="foreign">
+			<!-- property指的是关联对象 -->
+				<param name="property">idCard</param>
+			</generator>
+		</id>
+		
+		<property name="name"/>
+		<!-- 
+		one-to-one指示如何加载其关联对象，默认根据主键加载
+		也就是拿到关系字段值，根据对端的主键加载关联对象
+		constrained="true"表示当前主键（person的主键）还是外键
+		参照了对端的主键(IdCard的主键)
+		 -->
+		<one-to-one name="idCard" constrained="true"/>
+	</class>
+</hibernate-mapping>

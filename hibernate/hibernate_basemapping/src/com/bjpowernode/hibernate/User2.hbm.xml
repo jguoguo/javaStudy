@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.bjpowernode.hibernate"> 
+	<class name="User2" table="t_user2">
+		<id name="id">
+			<generator class="native"/>
+		</id>
+		
+		<property name="name" length="30" unique="true" not-null="true"/>
+		<property name="password"/>
+		<property name="createTime" type="date" column="create_time"/>
+		<property name="expireTime"/>
+	</class>
+</hibernate-mapping>

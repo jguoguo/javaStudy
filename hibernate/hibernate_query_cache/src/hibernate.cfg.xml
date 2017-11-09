@@ -1,0 +1,28 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernate_cache</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">Asdf-12345</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="hibernate.show_sql">true</property>
+		
+		<!-- 缓存提供商 -->
+		<property name="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</property>
+		
+		<!-- 启用查询缓存，默认是false，不启用 -->
+		<property name="hibernate.cache.use_query_cache">true</property>
+		
+		<!-- 启用二级缓存，这也是它的默认配置 -->
+		<property name="hibernate.cache.use_second_level_cache">true</property>
+		<mapping resource="com/bjpowernode/hibernate/Student.hbm.xml"/>
+		<mapping resource="com/bjpowernode/hibernate/Classes.hbm.xml"/>
+		
+		<!-- 指定Student使用二级缓存 -->
+		<class-cache usage="read-only" class="com.bjpowernode.hibernate.Student"/>
+	</session-factory>
+</hibernate-configuration>

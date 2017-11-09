@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.bjpowernode.hibernate"> 
+	<class name="Animal" table="t_animal" lazy="false">
+		<id name="id">
+			<generator class="native"/>
+		</id>
+		<!-- 鉴别字段 -->
+		<discriminator column="type" type="string"/>
+		<property name="name"></property>
+		<property name="sex"/>
+		<subclass name="Pig" discriminator-value="P">
+			<property name="weight"></property>
+		</subclass>
+		
+		<subclass name="Bird" discriminator-value="B">
+			<property name="height"></property>
+		</subclass>
+	</class>
+</hibernate-mapping>

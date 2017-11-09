@@ -1,0 +1,1 @@
+hibernate jpa映射  每个类一张表

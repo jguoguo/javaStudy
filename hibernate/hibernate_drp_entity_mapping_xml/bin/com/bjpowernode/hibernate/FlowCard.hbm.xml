@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.bjpowernode.hibernate.FlowCard" table="t_flow_card">
+		<id name="flowCardNo">
+			<generator class="assigned"/>
+		</id>
+		<property name="optType"/>
+		<property name="optDate"/>
+		<property name="vouSts"/>
+		<property name="adjustDate"/>
+		<property name="spotDate"/>
+		<property name="spotDesc"/>
+		<property name="confDate"/>
+		<many-to-one name="recorder"/>
+		<many-to-one name="adjuster"/>
+		<many-to-one name="spotter"/>
+		<many-to-one name="confirmer"/>
+		<many-to-one name="client"/>
+		<many-to-one name="fiscalYearPeriod"/>
+		<set name="flowCardDetailSet" lazy="extra" inverse="true">
+			<key column="flowCardNo"/>
+			<one-to-many class="com.bjpowernode.hibernate.FlowCardDetail"/>
+		</set>
+	</class>
+</hibernate-mapping>

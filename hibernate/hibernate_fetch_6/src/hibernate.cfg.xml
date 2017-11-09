@@ -1,0 +1,26 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost/hibernate_fetch</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">Asdf-12345</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="hibernate.show_sql">true</property>
+		<!-- 
+		<property name="hibernate.format_sql">true</property>
+		 -->
+		 
+		 <!-- 批量更新配置 -->
+		 <property name="hibernate.jdbc.batch_size">30</property>
+		 
+		 <!-- 批量抓取参数的配置 -->
+		 <property name="hibernate.jdbc.fetch_size">50</property>
+		 
+		<mapping resource="com/bjpowernode/hibernate/Classes.hbm.xml"/>
+		<mapping resource="com/bjpowernode/hibernate/Student.hbm.xml"/>
+	</session-factory>
+</hibernate-configuration>
