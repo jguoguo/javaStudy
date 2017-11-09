@@ -1,0 +1,8 @@
+dangdang.dao
+dangdang.dao.impl
+dangdang.entity
+dangdang.service
+dangdang.service.impl
+dangdang.struts2
+dangdang.test
+tarena.util

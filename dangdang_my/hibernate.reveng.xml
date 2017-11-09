@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+	<table name="d_d_book" catalog="dangdang"
+		class="dangdang.entity.Book">
+	</table>
+	<table name="d_d_category" catalog="dangdang"
+		class="dangdang.entity.Category">
+	</table>
+	<table name="d_d_comment_reply" catalog="dangdang"
+		class="dangdang.entity.CommentReply">
+	</table>
+	<table name="d_d_comment" catalog="dangdang"
+		class="dangdang.entity.Comment">
+	</table>
+	<table name="d_d_item" catalog="dangdang"
+		class="dangdang.entity.Item">
+	</table>
+	<table name="d_d_order" catalog="dangdang"
+		class="dangdang.entity.Order">
+	</table>
+	<table name="d_d_product" catalog="dangdang"
+		class="dangdang.entity.Product">
+	</table>
+	<table name="d_d_receive_address" catalog="dangdang"
+		class="dangdang.entity.Address">
+	</table>
+	<table name="d_d_send_way" catalog="dangdang"
+		class="dangdang.entity.SendWay">
+	</table>
+	<table name="d_d_user" catalog="dangdang" class="dangdang.entity.User"></table>
+</hibernate-reverse-engineering>

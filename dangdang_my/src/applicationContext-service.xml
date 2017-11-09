@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+
+<bean id="serviceTemplate" abstract="true">
+<property name="userDao" ref="userDao"></property>
+<property name="bookDao" ref="bookDao"></property>
+<property name="categoryDao" ref="categoryDao"></property>
+<property name="commentDao" ref="commentDao"></property>
+<property name="orderDao" ref="orderDao"></property>
+<property name="sendwayDao" ref="sendwayDao"></property>
+<property name="addressDao" ref="addressDao"></property>
+<property name="productDao" ref="productDao"></property>
+<property name="commentreplyDao" ref="commentreplyDao"></property>
+</bean>
+
+
+<bean id="userService" 
+class="dangdang.service.impl.UserServiceImpl" 
+parent="serviceTemplate"/>
+
+<bean id="commentService" 
+class="dangdang.service.impl.CommentServiceImpl" 
+parent="serviceTemplate" />
+
+<bean id="orderService" 
+class="dangdang.service.impl.OrderServiceImpl" 
+parent="serviceTemplate"/>
+
+<bean id="shoppingService" 
+class="dangdang.service.impl.ShoppingServiceImpl"
+parent="serviceTemplate" />
+	
+
+	
+	
+</beans>

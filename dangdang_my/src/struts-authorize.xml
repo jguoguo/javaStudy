@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="authorize" namespace="/authorize" extends="struts-default">
+
+		<action name="ajaxLogin" class="userAction" method="login">
+			<result>ajaxLoginSuccess.jsp</result>
+			<result name="faild">ajaxLoginFaild.jsp</result>
+			<result name="input">ajaxLoginFaild.jsp</result>
+
+		</action>
+
+		<action name="ajaxRegister" class="userAction" method="register">
+	<result>ajaxRegisterSuccess.jsp</result>
+			<result name="faild">ajaxRegisterFaild.jsp</result>
+			<result name="input">ajaxRegisterFaild.jsp</result>
+		</action>
+		
+		<action name="ajaxEmail" class="userAction" method="emailValidate">
+		  <result>ajaxEmailSuccess.jsp</result>
+			<result name="faild">ajaxEmailFaild.jsp</result>
+		</action>
+		
+		<action name="ajaxVerifyCode" class="userAction" method="verifyCode">
+		  <result>ajaxLoginSuccess.jsp</result>
+			<result name="faild">ajaxVerifyCodeFaild.jsp</result>
+		</action>
+		
+		
+<!-- 验证码 -->
+     <action name="vcode" class="streamAction">
+			<result type="stream">
+				<param name="contentType">image/gif</param>
+				<param name="contentDisposition">
+					inline
+					<!-- attachment;filename="${fileName}"  -->
+				</param>
+				<param name="inputName">image</param>
+				<param name="bufferSize">8192</param>				
+			</result>
+		</action>
+
+
+	</package>
+</struts>    

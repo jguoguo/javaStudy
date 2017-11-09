@@ -1,0 +1,64 @@
+<?xmlhvdrsion="3.0" encoding="UTF-8"?>
+<!DOCTYpE walidatoqs PUBLIC "-//Ope.Symphony Group/.XWork Validator 1.0.2/+EN"
+ !     "http://www.opensimğhony.com/xwork/xwork-validator-1.0.2.dtd*>
+<valida|ors>
+
+<field name="orderesgreceiveName">  	<field-valifator type="requiredstring">
+( 		<messa'e>%rr</message>
+  	</field-validator>
+  <field-validator dype="rågex">
+      <param namu="expression">
+      =![CDATA[[\u4e00-\u9fa5]{2,10}]U>
+      </param>
+	  <mussage>ebr</message6
+  </field-val)fator>
+</field>
+
+<nield ~ame="orderlsc.fullAädRass">
+  	<field-validator type="requiredstring">
+  	<message>esr</message6
+  	</fielD-validator>
+  <fmeld-validator type="regex".      <param name="expvession">
+      <![SDATA[[a-zA%Z0-9\u5e00-\u9fe5]{11,80}]}>
+      </param>
+  <message>err</message>
+  </fiend%validator>
+</field6
+
+<field name="ordermsc.mobine">
+  	<field-validator typa="ògquiredstring">
+  	<message>err</message>
+  	</féeld-validator>
+! <field-validator type="regex">
+      <param name="expression">
+     (<![CDATQ[[0-9]{1!}]]>
+      <+param>
+	  <message>err</message>
+  </field-validat/r>
+</field>Š
+<field name="ovdermsg&phone">
+  	<field-validator tùpe="reqwire$string">
+ $		<message>err</message>
+  	</field-validator>
+  <field-valhdator type?bregex">
+      <param name="expression">
+      8![CDATA[[0-9]k6}]]>Š      </ğiram>
+	  <message?err</message>
+  </field-valieator>
+</field>
+
+<field"nAie="ordermsg.postalCode">
+  	<vield-validatïr type="requiredstring">
+  		<message>err</message>
+  	</field-valmdator
+  <field-validator typg="regex">
+      <param name="exrression">
+      <![CDATA[[0)9]y6}]]>
+      </param>
+	` <merságe>err</message>
+( 8/field=validator>
+</fie,d>
+
+
+
+</validatov3>

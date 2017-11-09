@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<package name="catalog" 
+namespace="/catalog" 
+extends="struts-default">
+
+<action name="all_category" class="shoppingAction" method="categoryParent">
+		  <result>all_category.jsp</result>
+		</action>
+		
+		<action name="categorySub" class="shoppingAction" method="categorySub">
+		  <result>category.jsp</result>
+		</action>
+	<!--  	
+		<action name="bookList" class="shoppingAction" method="bookList">
+				<result>book_list.jsp</result>
+		</action>
+		-->
+			<action name="PageList" class="shoppingAction" method="PageList">
+				<result>book_list.jsp</result>
+		 </action>
+	
+	<action name="Cart" class="shoppingAction" method="AddCart">
+				
+		 </action>
+	<action name="BookDetail" class="shoppingAction" method="bookDetail">
+		 <result >book_detail.jsp</result>
+		 </action>
+		 
+		 <action name="Comment" class="commentAction" method="commentwrite">
+		 <result type="redirect">BookDetail?cid=${book.id}</result>
+		 <result name="faild">../authorize/login_form.jsp</result>
+		 </action>
+		 
+		 <action name="Commentread" class="commentAction" method="commentread">
+		 <result>recomment.jsp</result>
+		 <result name="faild">../authorize/login_form.jsp</result>
+		 </action>
+		 
+		 <action name="Reply" class="commentAction" method="reply">
+		 <result>reply.jsp</result>
+		 <result name="faild">../authorize/login_form.jsp</result>
+		 </action>
+		 
+		 <action name="Commentreply" class="commentAction" method="commentreply">
+		 <result type="redirect">BookDetail?cid=${book.id}</result>
+		 <result name="faild">../authorize/login_form.jsp</result>
+		 </action>
+		</package>
+</struts>    

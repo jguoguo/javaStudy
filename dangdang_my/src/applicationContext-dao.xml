@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	
+	<bean id="daoTemplate" abstract="true">
+		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	</bean>
+
+	<bean id="userDao" 
+	class="dangdang.dao.impl.UserDaoImpl" parent="daoTemplate"/>
+		
+		<bean id="bookDao" 
+		class="dangdang.dao.impl.BookDaoImpl" parent="daoTemplate"/>
+			
+			<bean id="orderDao" 
+			class="dangdang.dao.impl.OrderDaoImpl" parent="daoTemplate"/>
+				
+				<bean id="commentDao" 
+				class="dangdang.dao.impl.CommentDaoImpl" parent="daoTemplate"/>
+					
+					<bean id="categoryDao" 
+					class="dangdang.dao.impl.CategoryDaoImpl" parent="daoTemplate"/>
+		<bean id="sendwayDao" 
+					class="dangdang.dao.impl.SendWayDaoImpl" parent="daoTemplate"/>
+	<bean id="addressDao" 
+					class="dangdang.dao.impl.AddressDaoImpl" parent="daoTemplate"/>
+	<bean id="commentreplyDao" 
+					class="dangdang.dao.impl.CommentReplyDaoImpl" parent="daoTemplate"/>
+	
+	<bean id="productDao" 
+					class="dangdang.dao.impl.ProductDaoImpl" parent="daoTemplate"/>
+	
+	
+</beans>

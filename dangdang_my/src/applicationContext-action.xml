@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+
+<bean id="actionTemplate" abstract="true">
+<property name="userService" ref="userService"></property>
+<property name="shoppingService" ref="shoppingService"></property>
+<property name="commentService" ref="commentService"></property>
+<property name="orderService" ref="orderService"></property>
+</bean>
+
+	<bean id="userAction"
+	 class="dangdang.struts2.UserAction" 
+	 scope="prototype" parent="actionTemplate"/>
+	
+		<bean id="commentAction"
+	 class="dangdang.struts2.CommentAction" 
+	 scope="prototype" parent="actionTemplate"/>
+	 
+	 	<bean id="orderAction"
+	 class="dangdang.struts2.OrderAction" 
+	 scope="prototype" parent="actionTemplate"/>
+	 
+	 	<bean id="shoppingAction"
+	 class="dangdang.struts2.ShoppingAction" 
+	 scope="prototype" parent="actionTemplate"/>
+	 
+	 
+	<bean id="streamAction"
+	 class="dangdang.struts2.StreamAction"
+	 scope="prototype"/>
+	
+	
+</beans>
