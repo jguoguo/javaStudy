@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+  Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+  version="3.0">
+
+	<servlet>
+		<!--Ãû×ÖÈÎÒâÐ´-->
+		<servlet-name>MyServlet</servlet-name>
+		<servlet-class>LoginServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MyServlet</servlet-name>
+		<url-pattern>/user/loginServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<!--Ãû×ÖÈÎÒâÐ´-->
+		<servlet-name>StudentServlet</servlet-name>
+		<servlet-class>StudentServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>StudentServlet</servlet-name>
+		<url-pattern>/queryStudentServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<!--Ãû×ÖÈÎÒâÐ´-->
+		<servlet-name>TestLifeCycleServlet</servlet-name>
+		<servlet-class>TestLifeCycleServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>TestLifeCycleServlet</servlet-name>
+		<url-pattern>/testLifeCycleServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<!--Ãû×ÖÈÎÒâÐ´-->
+		<servlet-name>SetCookies</servlet-name>
+		<servlet-class>SetCookies</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SetCookies</servlet-name>
+		<url-pattern>/setCookies</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<!--Ãû×ÖÈÎÒâÐ´-->
+		<servlet-name>ShowCookies</servlet-name>
+		<servlet-class>ShowCookies</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ShowCookies</servlet-name>
+		<url-pattern>/showCookies</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<!--Ãû×ÖÈÎÒâÐ´-->
+		<servlet-name>SetSessionServlet</servlet-name>
+		<servlet-class>SetSessionServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SetSessionServlet</servlet-name>
+		<url-pattern>/setSessionServlet</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<!--Ãû×ÖÈÎÒâÐ´-->
+		<servlet-name>ShowSessionServlet</servlet-name>
+		<servlet-class>ShowSessionServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ShowSessionServlet</servlet-name>
+		<url-pattern>/showSessionServlet</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<!--Ãû×ÖÈÎÒâÐ´-->
+		<servlet-name>SearchStudentServlet</servlet-name>
+		<servlet-class>SearchStudentServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SearchStudentServlet</servlet-name>
+		<url-pattern>/SearchStudentServlet</url-pattern>
+	</servlet-mapping>
+</web-app>

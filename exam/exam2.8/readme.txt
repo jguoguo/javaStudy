@@ -1,0 +1,40 @@
+V1.0
+	*将实体模型转出成代码
+V1.1
+	*完成数据库连接的封装
+	*建立CourseManager,实现添加课程方法
+	*采用单例模式取得CourseManager对象
+V1.2
+	*建立CourseController
+V1.3
+	*实现查询列表
+V1.4
+	*添加删除课程和修改课程方法
+V1.5
+	*采用递归读取班级信息
+V1.6
+	*添加班级信息
+	*重构
+V1.8
+	*建立StudentManager接口
+	*完成添加学生
+V2.1
+	*作业：分页查询学生
+V2.2
+	*建立配置文件exam-config.properties
+	*将数据库配置信息配置到该配置文件中
+	*完成该配置文件的读取
+V2.3
+	*建立GradeManager
+V2.4
+	*修改学生
+	*删除学生
+V2.6
+	*完成添加成绩、修改成绩、删除成绩
+	*动态实例化GradeManagerImpl
+V2.7
+	*完成根据学生代码查询学生成绩
+	*注意DecimalFormat
+V2.8
+	*分页查询成绩列表
+	*重构findGradeListByStudentId方法
